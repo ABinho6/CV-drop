@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarga Plantillas de CV Gratis</title>
+    <style>
+        /* Reset y configuración base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header principal */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Contador de tiempo */
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .countdown-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem 1rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            background: white;
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .description {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Galería de plantillas */
+        .gallery-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .templates-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .template-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .template-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .template-preview {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            border: 2px dashed #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .template-card:hover .template-preview {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+
+        .download-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4c93);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-options {
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            padding: 1rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 1000;
+            min-width: 200px;
+            border: 2px solid #667eea;
+        }
+
+        .download-options.show {
+            display: flex;
+        }
+
+        .download-option {
+            background: #f8f9fa;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .download-option:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .download-option:first-child {
+            border-color: #667eea;
+        }
+
+        .download-option:last-child {
+            border-color: #764ba2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                margin: 1rem;
+                padding: 2rem 1rem;
+            }
+
+            .templates-gallery {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .countdown-item {
+                padding: 1rem 0.5rem;
+            }
+
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header principal con título y subtítulo -->
+    <header class="header">
+        <h1>Descarga Plantillas de CV Gratis</h1>
+        <p>Nuevos drops cada mes</p>
+    </header>
+
+    <!-- Contador de tiempo hasta próxima renovación -->
+    <div class="countdown-container">
+        <h2 class="countdown-title">Próximo drop en:</h2>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Días</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutos</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Segundos</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Descripción del servicio -->
+        <p class="description">
+            Ofrecemos plantillas de currículum minimalistas y profesionales. El primer día de cada mes publicamos un nuevo pack para que puedas renovar tu CV y destacar en tu sector. Todas nuestras plantillas están diseñadas con las últimas tendencias del mercado laboral.
+        </p>
+
+        <!-- Título de la galería -->
+        <h2 class="gallery-title">Plantillas Disponibles</h2>
+
+        <!-- Galería de plantillas -->
+        <div class="templates-gallery">
+            <!-- Plantilla 1 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 1</h3>
+                <div class="template-preview">
+                    <img src="preview1.png" alt="Preview Plantilla 1" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla1.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla1.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 2 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 2</h3>
+                <div class="template-preview">
+                    <img src="preview2.png" alt="Preview Plantilla 2" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla2.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla2.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 3 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 3</h3>
+                <div class="template-preview">
+                    <img src="preview3.png" alt="Preview Plantilla 3" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla3.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla3.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 4 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 4</h3>
+                <div class="template-preview">
+                    <img src="preview4.png" alt="Preview Plantilla 4" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla4.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla4.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 5 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 5</h3>
+                <div class="template-preview">
+                    <img src="preview5.png" alt="Preview Plantilla 5" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla5.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla5.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 6 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 6</h3>
+                <div class="template-preview">
+                    <img src="preview6.png" alt="Preview Plantilla 6" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla6.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla6.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 7 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 7</h3>
+                <div class="template-preview">
+                    <img src="preview7.png" alt="Preview Plantilla 7" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla7.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla7.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 8 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 8</h3>
+                <div class="template-preview">
+                    <img src="preview8.png" alt="Preview Plantilla 8" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla8.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla8.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 9 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 9</h3>
+                <div class="template-preview">
+                    <img src="preview9.png" alt="Preview Plantilla 9" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla9.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla9.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plantilla 10 -->
+            <div class="template-card">
+                <h3 class="template-title">Plantilla 10</h3>
+                <div class="template-preview">
+                    <img src="preview10.png" alt="Preview Plantilla 10" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
+                </div>
+                <div class="download-container">
+                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
+                    <div class="download-options">
+                        <a href="plantilla10.docx" class="download-option" download>📄 Formato Word</a>
+                        <a href="plantilla10.tex" class="download-option" download>📝 Formato LaTeX</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Script para el contador de tiempo hasta la próxima renovación
+        function initCountdown() {
+            // Función para calcular el próximo día 1 del mes a las 00:00 hora de Madrid
+            function getNextFirstOfMonth() {
+                const now = new Date();
+                const madrid = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Madrid"}));
+                
+                // Si estamos en el día 1 del mes y aún no han pasado las 00:00, el objetivo es hoy
+                // Si no, el objetivo es el día 1 del próximo mes
+                let targetYear = madrid.getFullYear();
+                let targetMonth = madrid.getMonth();
+                
+                if (madrid.getDate() > 1 || (madrid.getDate() === 1 && madrid.getHours() > 0)) {
+                    targetMonth += 1;
+                    if (targetMonth > 11) {
+                        targetMonth = 0;
+                        targetYear += 1;
+                    }
+                }
+                
+                // Crear la fecha objetivo en zona horaria de Madrid
+                const targetDate = new Date();
+                targetDate.setFullYear(targetYear, targetMonth, 1);
+                targetDate.setHours(0, 0, 0, 0);
+                
+                // Ajustar para zona horaria de Madrid
+                const madridOffset = getMadridTimezoneOffset(targetDate);
+                const localOffset = targetDate.getTimezoneOffset() * 60000;
+                const madridTime = targetDate.getTime() - localOffset + madridOffset;
+                
+                return new Date(madridTime);
+            }
+            
+            // Función para obtener el offset de Madrid (considerando horario de verano/invierno)
+            function getMadridTimezoneOffset(date) {
+                const jan = new Date(date.getFullYear(), 0, 1);
+                const jul = new Date(date.getFullYear(), 6, 1);
+                const janOffset = jan.getTimezoneOffset();
+                const julOffset = jul.getTimezoneOffset();
+                
+                // Madrid está en CET (UTC+1) en invierno y CEST (UTC+2) en verano
+                const isDST = date.getTimezoneOffset() < Math.max(janOffset, julOffset);
+                return isDST ? 2 * 3600000 : 1 * 3600000; // 2 horas o 1 hora en milisegundos
+            }
+            
+            let targetDate = getNextFirstOfMonth();
+            
+            // Elementos del DOM para mostrar el tiempo
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            // Función para actualizar el contador
+            function updateCountdown() {
+                const now = new Date();
+                const currentTime = now.getTime();
+                const timeLeft = targetDate.getTime() - currentTime;
+                
+                // Si el tiempo se agota, calcular el próximo primer día del mes
+                if (timeLeft < 0) {
+                    targetDate = getNextFirstOfMonth();
+                    return; // Salir y esperar al próximo ciclo
+                }
+                
+                // Calcular días, horas, minutos y segundos restantes
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                // Actualizar los elementos del DOM con formato de dos dígitos
+                daysEl.textContent = days.toString().padStart(2, '0');
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
+                secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            // Actualizar inmediatamente y luego cada segundo
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // Función para mostrar/ocultar opciones de descarga
+        function toggleDownloadOptions(button) {
+            const options = button.nextElementSibling;
+            const allOptions = document.querySelectorAll('.download-options');
+            
+            // Cerrar todas las otras opciones
+            allOptions.forEach(option => {
+                if (option !== options) {
+                    option.classList.remove('show');
+                }
+            });
+            
+            // Alternar la visibilidad de las opciones actuales
+            options.classList.toggle('show');
+        }
+        
+        // Cerrar opciones cuando se hace clic fuera
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.download-container')) {
+                const allOptions = document.querySelectorAll('.download-options');
+                allOptions.forEach(option => {
+                    option.classList.remove('show');
+                });
+            }
+        });
+        
+        // Inicializar el contador cuando se carga la página
+        document.addEventListener('DOMContentLoaded', initCountdown);
+        
+        // Agregar efectos de hover mejorados para las tarjetas
+        document.addEventListener('DOMContentLoaded', function() {
+            const templateCards = document.querySelectorAll('.template-card');
+            
+            templateCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
