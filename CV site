@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantillas de CV - Álvaro</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #2e86ab; color: white; padding: 20px; text-align: center; }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .card { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+    .card img { width: 100%; border-radius: 8px; }
+    .download-btn { background: #2e86ab; color: white; text-decoration: none; padding: 8px 12px; border-radius: 5px; display: inline-block; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Descarga Plantillas de CV Gratis</h1>
+    <p>Plantillas minimalistas y limpias para distintos perfiles</p>
+  </header>
+  <main class="container">
+    <div class="card">
+      <img src="preview1.png" alt="Plantilla Minimalista">
+      <h3>Plantilla Minimalista</h3>
+      <a href="plantilla_minimalista.docx" class="download-btn">Descargar</a>
+    </div>
+    <div class="card">
+      <img src="preview2.png" alt="Plantilla Limpia">
+      <h3>Plantilla Limpia</h3>
+      <a href="plantilla_limpia.docx" class="download-btn">Descargar</a>
+    </div>
+    <!-- Añade más plantillas aquí -->
+  </main>
+</body>
+</html>
