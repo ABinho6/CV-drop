@@ -1,0 +1,102 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{helvet} % Arial-like font
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+% Configuración de fuente
+\renewcommand{\familydefault}{\sfdefault}
+
+% Color principal
+\definecolor{accentcolor}{RGB}{52, 73, 94}
+
+% Sin numeración de páginas
+\pagestyle{empty}
+
+% Formato de secciones
+\titleformat{\section}
+  {\large\bfseries\color{accentcolor}}
+  {}
+  {0em}
+  {\MakeUppercase}[\vspace{2pt}{\color{accentcolor}\titlerule[1pt]}]
+
+% Espaciado de secciones
+\titlespacing*{\section}{0pt}{15pt}{8pt}
+
+% Comando para entradas con tabla
+\newcommand{\tableentry}[4]{
+  \begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}
+    \textbf{#1} & \textit{#2} \\
+    \textit{#3} & \\
+  \end{tabularx}
+  \vspace{0.2em}
+  #4
+  \vspace{0.8em}
+}
+
+% Comando para lista de habilidades horizontal
+\newcommand{\skilllist}[1]{
+  #1
+}
+
+\begin{document}
+
+% Encabezado
+\begin{center}
+  {\huge\bfseries TU NOMBRE Y APELLIDOS}
+  
+  \vspace{0.3em}
+  {\color{accentcolor}\rule{0.6\textwidth}{3pt}}
+  
+  \vspace{0.8em}
+  \begin{tabular}{c}
+    +34 123 456 789 \quad • \quad tucorreo@email.com \\
+    linkedin.com/in/tuperfil \quad • \quad Ciudad, País
+  \end{tabular}
+\end{center}
+
+\vspace{1.2em}
+
+% Experiencia Profesional
+\section{Experiencia Profesional}
+
+\tableentry{Desarrollador Full Stack}{Mar 2022 - Presente}{TechCorp Solutions, Madrid}{
+  \textbf{Responsabilidades:} Desarrollo de aplicaciones web usando React y Node.js, colaboración con equipos multidisciplinarios, optimización de rendimiento de aplicaciones. \\
+  \textbf{Logros:} Reducción del tiempo de carga en 40\%, implementación de sistema de autenticación seguro.
+}
+
+\tableentry{Desarrollador Junior}{Jun 2020 - Feb 2022}{StartupXYZ, Barcelona}{
+  \textbf{Responsabilidades:} Mantenimiento de código legacy, desarrollo de nuevas funcionalidades, testing automatizado. \\
+  \textbf{Logros:} Migración exitosa de base de datos, mejora en la cobertura de tests del 60\% al 85\%.
+}
+
+% Educación
+\section{Educación}
+
+\tableentry{Grado en Ingeniería Informática}{2016 - 2020}{Universidad Politécnica de Madrid}{
+  \textbf{Especialización:} Ingeniería del Software \\
+  \textbf{Proyecto Final:} Sistema de gestión de inventarios con IA - Calificación: Sobresaliente (9.2/10)
+}
+
+\tableentry{Bachillerato Tecnológico}{2014 - 2016}{IES Tecnológico, Madrid}{
+  \textbf{Modalidad:} Ciencias y Tecnología \\
+  \textbf{Nota media:} 8.7/10 - Mención honorífica en Matemáticas
+}
+
+% Habilidades
+\section{Habilidades}
+
+\begin{tabularx}{\textwidth}{@{}l@{\hspace{2em}}X@{}}
+  \textbf{Lenguajes:} & JavaScript, Python, Java, HTML5, CSS3, SQL, TypeScript \\[0.4em]
+  \textbf{Frameworks:} & React, Angular, Node.js, Express, Django, Spring Boot \\[0.4em]
+  \textbf{Herramientas:} & Git, Docker, Jenkins, AWS, MongoDB, PostgreSQL, VS Code \\[0.4em]
+  \textbf{Metodologías:} & Scrum, Kanban, TDD, DevOps, Integración Continua \\[0.4em]
+  \textbf{Idiomas:} & Español (Nativo), Inglés (C1), Alemán (B1) \\[0.4em]
+  \textbf{Soft Skills:} & Liderazgo, Comunicación, Pensamiento crítico, Adaptabilidad
+\end{tabularx}
+
+\end{document}

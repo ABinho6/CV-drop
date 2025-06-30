@@ -1,0 +1,265 @@
+% =====================================================
+% PLANTILLA DE CURRÍCULUM MODERNA
+% Compatible con pdfLaTeX y XeLaTeX
+% =====================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% =====================================================
+% PAQUETES NECESARIOS
+% =====================================================
+\usepackage[utf8]{inputenc}          % Codificación UTF-8
+\usepackage[spanish]{babel}          % Idioma español
+\usepackage[margin=1.8cm]{geometry}  % Márgenes de 1.8cm
+\usepackage{titlesec}               % Personalización de títulos
+\usepackage{enumitem}               % Personalización de listas
+\usepackage{tabularx}               % Tablas flexibles
+\usepackage{array}                  % Mejores opciones para tablas
+\usepackage{xcolor}                 % Colores
+\usepackage{hyperref}               % Enlaces
+\usepackage{fontawesome}            % Iconos
+\usepackage{tikz}                   % Gráficos y decoraciones
+\usepackage{fancyhdr}               % Encabezados personalizados
+\usepackage{multicol}               % Múltiples columnas
+\usepackage{progressbar}            % Barras de progreso para skills
+
+% =====================================================
+% DEFINICIÓN DE COLORES
+% =====================================================
+\definecolor{primary}{RGB}{52, 73, 94}      % Azul oscuro
+\definecolor{secondary}{RGB}{149, 165, 166}  % Gris claro
+\definecolor{accent}{RGB}{41, 128, 185}      % Azul brillante
+\definecolor{light}{RGB}{236, 240, 241}     % Gris muy claro
+
+% =====================================================
+% CONFIGURACIÓN DE HYPERREF
+% =====================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    filecolor=primary,
+    urlcolor=accent,
+    pdftitle={Currículum Vitae Moderno},
+    pdfauthor={Tu Nombre}
+}
+
+% =====================================================
+% CONFIGURACIÓN DE TIKZ
+% =====================================================
+\usetikzlibrary{calc}
+
+% =====================================================
+% CONFIGURACIÓN DE SECCIONES
+% =====================================================
+% Formato de títulos de sección con decoración
+\titleformat{\section}
+  {\Large\bfseries\color{primary}}
+  {}{0em}
+  {\tikz[overlay] \fill[accent] (0,-0.1) rectangle (2,-0.2);\MakeUppercase}
+  [\vspace{2pt}]
+
+% Espaciado de secciones
+\titlespacing*{\section}{0pt}{15pt}{8pt}
+
+% =====================================================
+% CONFIGURACIÓN DE LISTAS
+% =====================================================
+\setlist[itemize]{leftmargin=15pt,itemsep=2pt,topsep=4pt}
+\renewcommand{\labelitemi}{\textcolor{accent}{$\bullet$}}
+
+% =====================================================
+% COMANDOS PERSONALIZADOS
+% =====================================================
+% Comando para el encabezado principal
+\newcommand{\headerbox}[1]{
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[light] (current page.north west) rectangle ([yshift=-4cm]current page.north east);
+    \end{tikzpicture}
+    #1
+}
+
+% Comando para entradas de experiencia con diseño mejorado
+\newcommand{\experienciamoderna}[4]{
+    \begin{tabularx}{\textwidth}{X r}
+        \textbf{\color{primary}#1} & \textcolor{secondary}{\textit{#2}} \\
+        \textit{\color{accent}#3} & \textcolor{secondary}{#4} \\
+    \end{tabularx}
+    \vspace{2pt}
+}
+
+% Comando para educación con diseño mejorado
+\newcommand{\educacionmoderna}[4]{
+    \begin{tabularx}{\textwidth}{X r}
+        \textbf{\color{primary}#1} & \textcolor{secondary}{\textit{#2}} \\
+        \textit{\color{accent}#3} & \textcolor{secondary}{#4} \\
+    \end{tabularx}
+    \vspace{2pt}
+}
+
+% Comando para barras de habilidades
+\newcommand{\skillbar}[2]{
+    \textbf{#1} \hfill
+    \begin{tikzpicture}[baseline=-0.1cm]
+        \fill[light] (0,0) rectangle (3,0.15);
+        \fill[accent] (0,0) rectangle (#2*3/5,0.15);
+    \end{tikzpicture} \\[4pt]
+}
+
+% =====================================================
+% INICIO DEL DOCUMENTO
+% =====================================================
+\begin{document}
+
+% Eliminar numeración de páginas
+\pagestyle{empty}
+
+% =====================================================
+% ENCABEZADO PRINCIPAL CON FONDO
+% =====================================================
+\headerbox{
+    \vspace{1cm}
+    \begin{center}
+        \textbf{\Huge\color{primary} Tu Nombre Completo} \\[8pt]
+        \textbf{\Large\color{accent} Desarrollador Full Stack} \\[15pt]
+        
+        % Información de contacto en línea
+        \begin{tabular}{c c c}
+            \textcolor{primary}{\faPhone} \textbf{+34 123 456 789} &
+            \textcolor{primary}{\faEnvelope} \textbf{tuemail@ejemplo.com} &
+            \textcolor{primary}{\faMapMarker} \textbf{Tu Ciudad, España} \\[8pt]
+            \textcolor{primary}{\faLinkedin} \href{https://linkedin.com/in/tuusuario}{\textbf{LinkedIn}} &
+            \textcolor{primary}{\faGithub} \href{https://github.com/tuusuario}{\textbf{GitHub}} &
+            \textcolor{primary}{\faGlobe} \href{https://tuportfolio.com}{\textbf{Portfolio}}
+        \end{tabular}
+    \end{center}
+    \vspace{1.5cm}
+}
+
+% =====================================================
+% SECCIÓN: PERFIL PROFESIONAL
+% =====================================================
+\section{Perfil Profesional}
+\textcolor{secondary}{
+Desarrollador Full Stack con más de 5 años de experiencia creando soluciones web innovadoras y escalables. Especializado en tecnologías modernas como React, Node.js y cloud computing. Apasionado por el código limpio, las metodologías ágiles y el aprendizaje continuo. Busco formar parte de equipos dinámicos donde pueda aportar mi experiencia técnica y liderazgo.
+}
+
+% =====================================================
+% SECCIÓN: EXPERIENCIA PROFESIONAL
+% =====================================================
+\section{Experiencia Profesional}
+
+\experienciamoderna{Senior Full Stack Developer}{Tech Solutions S.L.}{Madrid, España}{2022 - Presente}
+\begin{itemize}
+    \item Arquitectura y desarrollo de aplicaciones web con React, Node.js y MongoDB
+    \item Liderazgo técnico de equipo multidisciplinario de 5 personas
+    \item Implementación de CI/CD con Jenkins y Docker, reduciendo tiempo de deploy en 60\%
+    \item Mentoría a desarrolladores junior y definición de estándares de código
+\end{itemize}
+
+\vspace{10pt}
+
+\experienciamoderna{Frontend Developer}{Digital Agency}{Barcelona, España}{2020 - 2022}
+\begin{itemize}
+    \item Desarrollo de interfaces responsive con React, TypeScript y Sass
+    \item Integración con APIs REST y GraphQL para aplicaciones de alto tráfico
+    \item Optimización de performance web logrando mejoras del 45\% en Core Web Vitals
+    \item Colaboración estrecha con equipos de UX/UI y backend
+\end{itemize}
+
+\vspace{10pt}
+
+\experienciamoderna{Junior Developer}{StartUp Tech}{Valencia, España}{2018 - 2020}
+\begin{itemize}
+    \item Desarrollo de features con JavaScript vanilla y frameworks modernos
+    \item Participación activa en sprints ágiles y retrospectivas
+    \item Mantenimiento de bases de código legacy y migración a tecnologías actuales
+    \item Creación de documentación técnica y testing automatizado
+\end{itemize}
+
+% =====================================================
+% SECCIÓN: EDUCACIÓN
+% =====================================================
+\section{Educación}
+
+\educacionmoderna{Grado en Ingeniería de Software}{Universidad Politécnica de Valencia}{Valencia, España}{2014 - 2018}
+\begin{itemize}
+    \item Especialización en Desarrollo Web y Arquitecturas Distribuidas
+    \item Proyecto Final: Plataforma e-learning con React y Node.js (Nota: 9.2/10)
+    \item Actividades: Presidente del club de programación universitario
+\end{itemize}
+
+\vspace{8pt}
+
+\educacionmoderna{Certificación AWS Solutions Architect}{Amazon Web Services}{Online}{2021}
+\begin{itemize}
+    \item Diseño de arquitecturas cloud escalables y seguras
+    \item Dominio de servicios EC2, S3, RDS, Lambda y CloudFormation
+\end{itemize}
+
+% =====================================================
+% SECCIÓN: HABILIDADES TÉCNICAS CON BARRAS DE PROGRESO
+% =====================================================
+\section{Habilidades Técnicas}
+
+\begin{multicols}{2}
+    \textbf{\color{primary}Frontend}\\[5pt]
+    \skillbar{React/Next.js}{5}
+    \skillbar{TypeScript}{4}
+    \skillbar{CSS/Sass}{4}
+    \skillbar{Vue.js}{3}
+    
+    \columnbreak
+    
+    \textbf{\color{primary}Backend}\\[5pt]
+    \skillbar{Node.js/Express}{5}
+    \skillbar{Python/Django}{4}
+    \skillbar{Java/Spring}{3}
+    \skillbar{PHP/Laravel}{3}
+\end{multicols}
+
+\vspace{5pt}
+
+\begin{multicols}{2}
+    \textbf{\color{primary}Bases de Datos}\\[5pt]
+    \skillbar{MongoDB}{5}
+    \skillbar{PostgreSQL}{4}
+    \skillbar{Redis}{3}
+    \skillbar{MySQL}{4}
+    
+    \columnbreak
+    
+    \textbf{\color{primary}DevOps \& Tools}\\[5pt]
+    \skillbar{Docker/K8s}{4}
+    \skillbar{AWS/Azure}{4}
+    \skillbar{Git/GitHub}{5}
+    \skillbar{Jenkins/CI-CD}{3}
+\end{multicols}
+
+% =====================================================
+% SECCIÓN: PROYECTOS DESTACADOS
+% =====================================================
+\section{Proyectos Destacados}
+
+\textbf{\color{primary}E-Commerce Platform} \hfill \textcolor{secondary}{\faGithub\ \href{https://github.com/tuusuario/ecommerce}{Ver código}}\\
+\textit{\color{accent}React, Node.js, MongoDB, Stripe API}\\
+Plataforma completa de comercio electrónico con panel administrativo, gestión de inventario y pasarela de pagos. +10k usuarios activos.
+
+\vspace{8pt}
+
+\textbf{\color{primary}Task Management SaaS} \hfill \textcolor{secondary}{\faGlobe\ \href{https://tuapp.com}{Ver demo}}\\
+\textit{\color{accent}Next.js, TypeScript, Prisma, PostgreSQL}\\
+Aplicación SaaS para gestión de proyectos con funcionalidades en tiempo real usando WebSockets. Arquitectura multi-tenant.
+
+% =====================================================
+% SECCIÓN: IDIOMAS Y CERTIFICACIONES
+% =====================================================
+\section{Idiomas \& Certificaciones}
+
+\begin{tabularx}{\textwidth}{X X}
+    \textbf{\color{primary}Idiomas:} & \textbf{\color{primary}Certificaciones:} \\
+    \textbf{Español:} Nativo & AWS Solutions Architect Associate \\
+    \textbf{Inglés:} C1 (Cambridge Certificate) & Google Cloud Platform Fundamentals \\
+    \textbf{Francés:} A2 (En progreso) & Scrum Master Certified (SMC) \\
+\end{tabularx}
+
+\end{document}
