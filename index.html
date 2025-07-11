@@ -3,625 +3,678 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descarga Plantillas de CV Gratis</title>
+    <title>DENIM DROPS - Vaqueros Unisex Edición Limitada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset y configuración base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --off-white: #fafafa;
+            --light-gray: #e5e5e5;
+            --electric-blue: #00d4ff;
+            --dark-gray: #2a2a2a;
+            --medium-gray: #666;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--off-white);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
         }
 
-        /* Header principal */
-        .header {
-            text-align: center;
-            padding: 4rem 2rem 2rem;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 3rem;
+        .montserrat-bold {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .header p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        /* Contador de tiempo */
-        .countdown-container {
-            background: rgba(255, 255, 255, 0.95);
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
             backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem auto;
-            max-width: 600px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
         }
 
-        .countdown-title {
-            text-align: center;
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
             font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--dark-gray);
+            text-decoration: none;
         }
 
-        .countdown {
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        .countdown-sticky {
+            background: var(--electric-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .countdown-main {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .countdown-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            text-align: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
         }
 
         .countdown-item {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1.5rem 1rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-5px);
+            text-align: center;
         }
 
         .countdown-number {
             font-size: 2.5rem;
             font-weight: 700;
+            color: var(--electric-blue);
             display: block;
         }
 
         .countdown-label {
             font-size: 0.9rem;
-            opacity: 0.9;
+            color: var(--medium-gray);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.05em;
         }
 
-        /* Contenido principal */
-        .main-content {
-            background: white;
-            margin: 2rem auto;
-            max-width: 1200px;
-            border-radius: 25px;
-            padding: 3rem 2rem;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-
-        .description {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-        }
-
-        /* Galería de plantillas */
-        .gallery-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 3rem;
-            font-weight: 600;
-        }
-
-        .templates-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .template-card {
-            background: #f8f9fa;
-            border-radius: 20px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .template-card:hover {
-            transform: translateY(-10px);
-            border-color: #667eea;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .template-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .template-preview {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 0.9rem;
-            border: 2px dashed #ddd;
-            transition: all 0.3s ease;
-        }
-
-        .template-card:hover .template-preview {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        .cta-button {
+            background: var(--electric-blue);
             color: white;
-            border-color: transparent;
-        }
-
-        .download-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .download-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            padding: 1rem 2rem;
             border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-top: 1rem;
         }
 
-        .download-btn:hover {
-            background: linear-gradient(135deg, #5a6fd8, #6a4c93);
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        .cta-button:hover {
+            background: #00b8e6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
         }
 
-        .download-options {
-            position: absolute;
-            top: -120px;
-            left: 50%;
-            transform: translateX(-50%);
+        /* Product Grid */
+        .product-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-gray);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
             background: white;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            padding: 1rem;
-            display: none;
-            flex-direction: column;
-            gap: 0.5rem;
-            z-index: 1000;
-            min-width: 200px;
-            border: 2px solid #667eea;
-        }
-
-        .download-options.show {
-            display: flex;
-        }
-
-        .download-option {
-            background: #f8f9fa;
-            color: #333;
-            padding: 10px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 400px;
+            background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: "PRÓXIMAMENTE";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--electric-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--electric-blue);
+            font-weight: 700;
+        }
+
+        /* Drop Section */
+        .drop-section {
+            background: var(--dark-gray);
+            color: white;
+            padding: 4rem 2rem;
             text-align: center;
         }
 
-        .download-option:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .drop-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .drop-date {
+            font-size: 1.1rem;
+            color: var(--electric-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .drop-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
             color: white;
-            transform: scale(1.05);
         }
 
-        .download-option:first-child {
-            border-color: #667eea;
+        .drop-story {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #ccc;
         }
 
-        .download-option:last-child {
-            border-color: #764ba2;
+        /* Newsletter */
+        .newsletter {
+            background: white;
+            padding: 4rem 2rem;
+            text-align: center;
         }
 
-        /* Responsive Design */
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            color: var(--medium-gray);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--electric-blue);
+        }
+
+        .newsletter-button {
+            background: var(--electric-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background: #00b8e6;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--electric-blue);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--electric-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            margin-top: 2rem;
+            color: #999;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
+            .nav-links {
+                display: none;
             }
 
-            .header p {
-                font-size: 1.1rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .countdown {
+            .countdown-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
+                gap: 1rem;
             }
 
-            .countdown-number {
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .drop-title {
                 font-size: 2rem;
             }
 
-            .main-content {
-                margin: 1rem;
-                padding: 2rem 1rem;
-            }
-
-            .templates-gallery {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .gallery-title {
+            .section-title {
                 font-size: 2rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .countdown-container {
-                margin: 1rem;
-                padding: 1.5rem;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-            .countdown-item {
-                padding: 1rem 0.5rem;
-            }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
 
-            .countdown-number {
-                font-size: 1.8rem;
-            }
+        /* Sticky Button */
+        .sticky-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--electric-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
 
-            .countdown-label {
-                font-size: 0.8rem;
-            }
+        .sticky-cta:hover {
+            background: #00b8e6;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
         }
     </style>
 </head>
 <body>
-    <!-- Header principal con título y subtítulo -->
+    <!-- Header -->
     <header class="header">
-        <h1>Descarga Plantillas de CV Gratis</h1>
-        <p>Nuevos drops cada mes</p>
+        <nav class="nav-container">
+            <a href="#" class="logo montserrat-bold">DENIM DROPS</a>
+            <ul class="nav-links">
+                <li><a href="#drops">Drops</a></li>
+                <li><a href="#lookbook">Lookbook</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#help">Ayuda</a></li>
+            </ul>
+            <div class="countdown-sticky">
+                <span id="countdown-nav">03:14:27:45</span>
+            </div>
+        </nav>
     </header>
 
-    <!-- Contador de tiempo hasta próxima renovación -->
-    <div class="countdown-container">
-        <h2 class="countdown-title">Próximo drop en:</h2>
-        <div class="countdown" id="countdown">
-            <div class="countdown-item">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">Días</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">Horas</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">Minutos</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">Segundos</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in-up">
+            <h1 class="montserrat-bold">PRÓXIMO DROP</h1>
+            <p class="hero-tagline">Edición limitada. Diseño único. Tu estilo urbano.</p>
+            
+            <div class="countdown-main">
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span class="countdown-number montserrat-bold">03</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number montserrat-bold">14</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number montserrat-bold">27</span>
+                        <span class="countdown-label">Min</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number montserrat-bold">45</span>
+                        <span class="countdown-label">Seg</span>
+                    </div>
+                </div>
+                <p style="color: var(--medium-gray); margin-bottom: 1rem;">Drop #08 - "Urban Nomad"</p>
+                <a href="#" class="cta-button">Reservar mi par</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Contenido principal -->
-    <main class="main-content">
-        <!-- Descripción del servicio -->
-        <p class="description">
-            Ofrecemos plantillas de currículum minimalistas y profesionales. El primer día de cada mes publicamos un nuevo pack para que puedas renovar tu CV y destacar en tu sector. Todas nuestras plantillas están diseñadas con las últimas tendencias del mercado laboral.
-        </p>
-
-        <!-- Título de la galería -->
-        <h2 class="gallery-title">Plantillas Disponibles</h2>
-
-        <!-- Galería de plantillas -->
-        <div class="templates-gallery">
-            <!-- Plantilla 1 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 1</h3>
-                <div class="template-preview">
-                    <img src="preview1.png" alt="Preview Plantilla 1" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla1.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla1.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
+    <!-- Product Preview -->
+    <section class="product-grid">
+        <h2 class="section-title montserrat-bold">Próximos Lanzamientos</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Straight Fit Unisex</h3>
+                    <p class="product-price">€89</p>
                 </div>
             </div>
-
-            <!-- Plantilla 2 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 2</h3>
-                <div class="template-preview">
-                    <img src="preview2.png" alt="Preview Plantilla 2" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla2.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla2.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Wide Leg Urban</h3>
+                    <p class="product-price">€95</p>
                 </div>
             </div>
-
-            <!-- Plantilla 3 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 3</h3>
-                <div class="template-preview">
-                    <img src="preview3.png" alt="Preview Plantilla 3" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla3.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla3.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantilla 4 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 4</h3>
-                <div class="template-preview">
-                    <img src="preview4.png" alt="Preview Plantilla 4" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla4.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla4.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantilla 5 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 5</h3>
-                <div class="template-preview">
-                    <img src="preview5.png" alt="Preview Plantilla 5" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla5.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla5.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantilla 6 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 6</h3>
-                <div class="template-preview">
-                    <img src="preview6.png" alt="Preview Plantilla 6" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla6.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla6.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantilla 7 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 7</h3>
-                <div class="template-preview">
-                    <img src="preview7.png" alt="Preview Plantilla 7" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla7.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla7.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantilla 8 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 8</h3>
-                <div class="template-preview">
-                    <img src="preview8.png" alt="Preview Plantilla 8" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla8.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla8.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantilla 9 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 9</h3>
-                <div class="template-preview">
-                    <img src="preview9.png" alt="Preview Plantilla 9" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla9.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla9.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantilla 10 -->
-            <div class="template-card">
-                <h3 class="template-title">Plantilla 10</h3>
-                <div class="template-preview">
-                    <img src="preview10.png" alt="Preview Plantilla 10" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.parentNode.innerHTML='Preview no disponible';">
-                </div>
-                <div class="download-container">
-                    <button class="download-btn" onclick="toggleDownloadOptions(this)">Descargar</button>
-                    <div class="download-options">
-                        <a href="plantilla10.docx" class="download-option" download>📄 Formato Word</a>
-                        <a href="plantilla10.tex" class="download-option" download>📝 Formato LaTeX</a>
-                    </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Slim Fit Classic</h3>
+                    <p class="product-price">€85</p>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Drop Story -->
+    <section class="drop-section" id="drops">
+        <div class="drop-content">
+            <p class="drop-date">15 Julio 2025</p>
+            <h2 class="drop-title montserrat-bold">DROP #08: URBAN NOMAD</h2>
+            <p class="drop-story">
+                Inspirada en los nómadas urbanos que atraviesan la ciudad con propósito y estilo. 
+                Esta colección fusiona durabilidad streetwear con comfort premium. 
+                Fabricada con denim orgánico 100% sostenible y detalles únicos que cuentan historias.
+            </p>
+            <a href="#" class="cta-button">Ver Backstage</a>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2 class="montserrat-bold">No te pierdas ningún drop</h2>
+            <p>Sé el primero en conocer nuestros lanzamientos exclusivos y contenido behind-the-scenes.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="tu@email.com" class="newsletter-input" required>
+                <button type="submit" class="newsletter-button">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="montserrat-bold">DENIM DROPS</h3>
+                <p>Vaqueros unisex de edición limitada. Diseño consciente. Estilo urbano auténtico.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Comprar</h3>
+                <ul>
+                    <li><a href="#">Próximos Drops</a></li>
+                    <li><a href="#">Archivo</a></li>
+                    <li><a href="#">Guía de Tallas</a></li>
+                    <li><a href="#">Recomendaciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Sostenibilidad</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Prensa</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="#">Chat en Vivo</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DENIM DROPS. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <a href="#" class="sticky-cta">Comprar Ahora</a>
 
     <script>
-        // Script para el contador de tiempo hasta la próxima renovación
-        function initCountdown() {
-            // Función para calcular el próximo día 1 del mes a las 00:00 hora de Madrid
-            function getNextFirstOfMonth() {
-                const now = new Date();
-                const madrid = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Madrid"}));
-                
-                // Si estamos en el día 1 del mes y aún no han pasado las 00:00, el objetivo es hoy
-                // Si no, el objetivo es el día 1 del próximo mes
-                let targetYear = madrid.getFullYear();
-                let targetMonth = madrid.getMonth();
-                
-                if (madrid.getDate() > 1 || (madrid.getDate() === 1 && madrid.getHours() > 0)) {
-                    targetMonth += 1;
-                    if (targetMonth > 11) {
-                        targetMonth = 0;
-                        targetYear += 1;
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElements = document.querySelectorAll('.countdown-number');
+            const navCountdown = document.getElementById('countdown-nav');
+            
+            // Simulated countdown (in real implementation, this would be dynamic)
+            let days = 3, hours = 14, minutes = 27, seconds = 45;
+            
+            setInterval(() => {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        if (hours < 0) {
+                            hours = 23;
+                            days--;
+                        }
                     }
                 }
                 
-                // Crear la fecha objetivo en zona horaria de Madrid
-                const targetDate = new Date();
-                targetDate.setFullYear(targetYear, targetMonth, 1);
-                targetDate.setHours(0, 0, 0, 0);
-                
-                // Ajustar para zona horaria de Madrid
-                const madridOffset = getMadridTimezoneOffset(targetDate);
-                const localOffset = targetDate.getTimezoneOffset() * 60000;
-                const madridTime = targetDate.getTime() - localOffset + madridOffset;
-                
-                return new Date(madridTime);
-            }
-            
-            // Función para obtener el offset de Madrid (considerando horario de verano/invierno)
-            function getMadridTimezoneOffset(date) {
-                const jan = new Date(date.getFullYear(), 0, 1);
-                const jul = new Date(date.getFullYear(), 6, 1);
-                const janOffset = jan.getTimezoneOffset();
-                const julOffset = jul.getTimezoneOffset();
-                
-                // Madrid está en CET (UTC+1) en invierno y CEST (UTC+2) en verano
-                const isDST = date.getTimezoneOffset() < Math.max(janOffset, julOffset);
-                return isDST ? 2 * 3600000 : 1 * 3600000; // 2 horas o 1 hora en milisegundos
-            }
-            
-            let targetDate = getNextFirstOfMonth();
-            
-            // Elementos del DOM para mostrar el tiempo
-            const daysEl = document.getElementById('days');
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-            
-            // Función para actualizar el contador
-            function updateCountdown() {
-                const now = new Date();
-                const currentTime = now.getTime();
-                const timeLeft = targetDate.getTime() - currentTime;
-                
-                // Si el tiempo se agota, calcular el próximo primer día del mes
-                if (timeLeft < 0) {
-                    targetDate = getNextFirstOfMonth();
-                    return; // Salir y esperar al próximo ciclo
+                // Update main countdown
+                if (countdownElements.length >= 4) {
+                    countdownElements[0].textContent = String(days).padStart(2, '0');
+                    countdownElements[1].textContent = String(hours).padStart(2, '0');
+                    countdownElements[2].textContent = String(minutes).padStart(2, '0');
+                    countdownElements[3].textContent = String(seconds).padStart(2, '0');
                 }
                 
-                // Calcular días, horas, minutos y segundos restantes
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                // Actualizar los elementos del DOM con formato de dos dígitos
-                daysEl.textContent = days.toString().padStart(2, '0');
-                hoursEl.textContent = hours.toString().padStart(2, '0');
-                minutesEl.textContent = minutes.toString().padStart(2, '0');
-                secondsEl.textContent = seconds.toString().padStart(2, '0');
-            }
-            
-            // Actualizar inmediatamente y luego cada segundo
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
+                // Update nav countdown
+                navCountdown.textContent = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }, 1000);
         }
         
-        // Función para mostrar/ocultar opciones de descarga
-        function toggleDownloadOptions(button) {
-            const options = button.nextElementSibling;
-            const allOptions = document.querySelectorAll('.download-options');
-            
-            // Cerrar todas las otras opciones
-            allOptions.forEach(option => {
-                if (option !== options) {
-                    option.classList.remove('show');
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
-            
-            // Alternar la visibilidad de las opciones actuales
-            options.classList.toggle('show');
-        }
+        });
         
-        // Cerrar opciones cuando se hace clic fuera
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.download-container')) {
-                const allOptions = document.querySelectorAll('.download-options');
-                allOptions.forEach(option => {
-                    option.classList.remove('show');
-                });
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(250, 250, 250, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(250, 250, 250, 0.95)';
+                header.style.boxShadow = 'none';
             }
         });
         
-        // Inicializar el contador cuando se carga la página
-        document.addEventListener('DOMContentLoaded', initCountdown);
+        // Initialize countdown
+        updateCountdown();
         
-        // Agregar efectos de hover mejorados para las tarjetas
-        document.addEventListener('DOMContentLoaded', function() {
-            const templateCards = document.querySelectorAll('.template-card');
-            
-            templateCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
+        // Newsletter form
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert(`¡Gracias! Te hemos suscrito con el email: ${email}`);
+            e.target.reset();
         });
     </script>
 </body>
